@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.kaynir.audio-extension": {
+      "version": "https://github.com/Kaynir/unity-audio-extension.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "b30aaa80be04dc4dde9d54318014c6cc3a685b1f"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,

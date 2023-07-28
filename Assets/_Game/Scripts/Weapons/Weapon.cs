@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using CosmicHeart.Tools.Static;
 using CosmicHeart.Weapons.Aiming;
 using CosmicHeart.Weapons.Shooting;
+using Kaynir.Audio;
 using UnityEngine;
 
 namespace CosmicHeart.Weapons
@@ -17,6 +18,7 @@ namespace CosmicHeart.Weapons
         [Header("Shooting Settings:")]
         [SerializeField] private float shootingCooldown = 5f;
         [SerializeField] private ShootingModule shootingModule = null;
+        [SerializeField] private SoundBehaviour shootingSound = null;
 
         private bool isCooldown;
 
@@ -31,6 +33,7 @@ namespace CosmicHeart.Weapons
                 shootingModule.ExecuteShot(point, target);
             });
 
+            shootingSound.PlayOneShot();
             SetCooldown();
         }
 
