@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f931af9e30e73a64da76ad580ec48e06, type: 3}
+  m_Name: ProtonImpact
+  m_EditorClassIdentifier: 
+  variants:
+  - {fileID: 8300000, guid: 88e594297f1df324fa849f7775805fc6, type: 3}
+  filters:
+  - {fileID: 11400000, guid: 5fb3d06f39f13c642908ade954842405, type: 2}

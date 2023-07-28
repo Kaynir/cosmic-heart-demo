@@ -112,6 +112,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5509299802184702342}
   - component: {fileID: 6027585380271305871}
+  - component: {fileID: 7160613007023871645}
+  - component: {fileID: 5039440758833124326}
   m_Layer: 6
   m_Name: EngineLoop
   m_TagString: Untagged
@@ -145,11 +147,11 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3839790705306989641, guid: fc357bb5bda60b749afb438860ae4ad8,
     type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: 5d452bbeb8c0c3149a30c75b4ba5b7a2, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -231,6 +233,60 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7160613007023871645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7257044479014643507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c889210e243025346aac8dae2f46b539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 6027585380271305871}
+  evaluationSignal: {fileID: 5039440758833124326}
+  filters:
+  - {fileID: 11400000, guid: 40f981be03be797408b4156d28444e91, type: 2}
+  - {fileID: 11400000, guid: 9e968ab8b215e1d4f87caebfeb49ca0a, type: 2}
+--- !u!114 &5039440758833124326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7257044479014643507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ffa4f9c27382642bb1b6ebee794f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  normalizationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0.28715682
+      outSlope: 0.28715682
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.107778594
+    - serializedVersion: 3
+      time: 10
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  body: {fileID: 1825763462437748128}
 --- !u!1 &7432237593291460884
 GameObject:
   m_ObjectHideFlags: 0

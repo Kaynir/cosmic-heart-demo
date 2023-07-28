@@ -18,7 +18,7 @@ namespace CosmicHeart.Weapons
         [Header("Shooting Settings:")]
         [SerializeField] private float shootingCooldown = 5f;
         [SerializeField] private ShootingModule shootingModule = null;
-        [SerializeField] private SoundBehaviour shootingSound = null;
+        [SerializeField] private SoundPlayer shootingSound = null;
 
         private bool isCooldown;
 

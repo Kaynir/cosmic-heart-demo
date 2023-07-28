@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4637368428985716149}
   - component: {fileID: 4637368428985716154}
   - component: {fileID: 7710571577663171773}
+  - component: {fileID: 4517302494794251731}
   m_Layer: 9
   m_Name: FX_ProtonImpact
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4637368428985716148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 13.78}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4900,7 +4901,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3839790705306989641, guid: fc357bb5bda60b749afb438860ae4ad8,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 88e594297f1df324fa849f7775805fc6, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -4986,6 +4987,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4517302494794251731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4637368428985716148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d219225f855ec1a4bb7273a996e7aec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundAsset: {fileID: 11400000, guid: 0b2e62d50442e104f9f21e2fb05b629b, type: 2}
+  audioSource: {fileID: 7710571577663171773}
 --- !u!1 &6155982755090801328
 GameObject:
   m_ObjectHideFlags: 0

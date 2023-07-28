@@ -174,11 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d219225f855ec1a4bb7273a996e7aec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound:
-    clip: {fileID: 8300000, guid: b2a86e5306a0bf44ba44e6dfc098d7fa, type: 3}
-    source: {fileID: 8819415763894615994}
-    modules:
-    - {fileID: 11400000, guid: 5fb3d06f39f13c642908ade954842405, type: 2}
+  soundAsset: {fileID: 11400000, guid: 7e8a757d8b7215341b5dc19a6f8c6fc5, type: 2}
+  audioSource: {fileID: 8819415763894615994}
 --- !u!1 &9026112942057019400
 GameObject:
   m_ObjectHideFlags: 0
