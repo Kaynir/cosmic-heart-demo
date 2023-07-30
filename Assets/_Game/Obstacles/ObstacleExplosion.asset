@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f931af9e30e73a64da76ad580ec48e06, type: 3}
   m_Name: ObstacleExplosion
   m_EditorClassIdentifier: 
-  variants: []
-  filters: []
+  variants:
+  - {fileID: 8300000, guid: bc20cd9bebf59994f814257f28967f72, type: 3}
+  filters:
+  - {fileID: 11400000, guid: 5fb3d06f39f13c642908ade954842405, type: 2}

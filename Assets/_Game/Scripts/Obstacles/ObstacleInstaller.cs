@@ -7,15 +7,15 @@ namespace CosmicHeart.Obstacles
     public class ObstacleInstaller : MonoInstaller
     {
         [SerializeField] private ObstacleConfig config = null;
-        [SerializeField] private Rigidbody body = null;
+        [SerializeField] private Obstacle obstacle = null;
 
         public override void InstallBindings()
         {
             var settings = config.GetSettings();
             var healthSystem = new HealthSystem(settings.health);
-            var transform = body.transform;
+            var transform = obstacle.transform;
 
-            body.mass = settings.mass;
+            obstacle.Body.mass = settings.mass;
             
             transform.rotation = settings.rotation;
             transform.localScale = settings.localScale;

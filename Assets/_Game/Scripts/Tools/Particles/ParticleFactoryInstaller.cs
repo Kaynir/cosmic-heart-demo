@@ -2,7 +2,7 @@ using Zenject;
 
 namespace CosmicHeart.Tools.Particles
 {
-    public class ParticleInstaller : MonoInstaller
+    public class ParticleFactoryInstaller : MonoInstaller
     {
         public override void InstallBindings()
         {
