@@ -1,33 +1,43 @@
-using CosmicHeart.Characters;
 using CosmicHeart.Controls;
 using CosmicHeart.Interactions;
 using CosmicHeart.Movement.Moveables;
 using UnityEngine;
 using Zenject;
 
-public class PlayerSpaceshipInstaller : MonoInstaller
+namespace CosmicHeart.Characters
 {
-    [Header("Required Instances:")]
-    [SerializeField] private ZeroGravityMoveable movement = null;
-    [SerializeField] private HealthSystem healthSystem = null;
-
-    public override void InstallBindings()
+    public class PlayerSpaceshipInstaller : MonoInstaller
     {
-        BindControls();
-        BindMovement();
-    }
+        [SerializeField] private int maxHealth = 100;
+        [SerializeField] private ZeroGravityMoveable movement = null;
 
-    private void BindControls()
-    {
-        Container.Bind<PlayerInputActions>().AsSingle();
-        Container.BindInterfacesTo<PlayerControls>().AsSingle();
-        Container.BindInterfacesAndSelfTo<PlayerFacade>().AsSingle();
-    }
+        public override void InstallBindings()
+        {
+            BindControls();
+            BindMovement();
+            BindHealthSystem();
+        }
 
-    private void BindMovement()
-    {
-        Container.BindInterfacesTo<ZeroGravityMoveable>()
-                 .FromInstance(movement)
-                 .AsSingle();
+        private void BindControls()
+        {
+            Container.Bind<PlayerInputActions>().AsSingle();
+            Container.BindInterfacesTo<PlayerControls>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerFacade>().AsSingle();
+        }
+
+        private void BindMovement()
+        {
+            Container.BindInterfacesTo<ZeroGravityMoveable>()
+                     .FromInstance(movement)
+                     .AsSingle();
+        }
+
+        private void BindHealthSystem()
+        {
+            HealthSystem healthSystem = new HealthSystem(maxHealth);
+            Container.Bind<HealthSystem>()
+                     .FromInstance(healthSystem)
+                     .AsSingle();
+        }
     }
 }

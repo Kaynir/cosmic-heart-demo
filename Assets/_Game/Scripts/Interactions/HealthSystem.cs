@@ -3,32 +3,33 @@ using UnityEngine;
 
 namespace CosmicHeart.Interactions
 {
-    public class HealthSystem : MonoBehaviour, IDamageable
+    public class HealthSystem
     {
         private const int MIN_VALUE = 0;
-        private const int DEFAULT_MAX = 1;
 
         public event Action<int, int> ValueChanged;
-        public event Action Died;
-
-        [SerializeField, Min(DEFAULT_MAX)] private int maxValue = DEFAULT_MAX;
-
+        public event Action ValueDepleted;
+        
         public int Value { get; private set; }
+        public int MaxValue { get; private set; }
 
-        private void OnEnable() => SetValue(maxValue);
-
-        public void TakeDamage(int amount)
+        public HealthSystem(int maxValue)
         {
-            SetValue(Value - amount);
+            MaxValue = maxValue;
+            SetValue(maxValue);
         }
 
-        private void SetValue(int value)
+        public void SetValue(int value)
         {
-            Value = Mathf.Clamp(value, MIN_VALUE, maxValue);
-            ValueChanged?.Invoke(Value, maxValue);
+            Value = Mathf.Clamp(value, MIN_VALUE, MaxValue);
+            ValueChanged?.Invoke(Value, MaxValue);
 
-            if (Value > MIN_VALUE) return;
-            Died?.Invoke();
+            if (Value == MIN_VALUE) ValueDepleted?.Invoke();
+        }
+
+        public void UpdateValue(int amount)
+        {
+            SetValue(Value + amount);
         }
     }
 }

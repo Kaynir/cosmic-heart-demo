@@ -470,8 +470,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b09d980cce3a8324881673b9c2d458ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
   movement: {fileID: 4123897877220196463}
-  healthSystem: {fileID: 4123897877220196464}
 --- !u!114 &1256171172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,17 +720,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f72649c9be2781f41beafe20245b5290, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4123897877220196464 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1766469317643767871, guid: 48002fc4e4771db46aae59e2791c24dd,
-    type: 3}
-  m_PrefabInstance: {fileID: 4123897877220196460}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3994640cb1bde01408c1839493654eb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

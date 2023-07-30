@@ -394,7 +394,6 @@ GameObject:
   - component: {fileID: 1825763462437748128}
   - component: {fileID: 7754643751572177628}
   - component: {fileID: 4780545690703076555}
-  - component: {fileID: 1766469317643767871}
   m_Layer: 6
   m_Name: Spaceship
   m_TagString: Player
@@ -482,19 +481,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 8009816441907762555}
---- !u!114 &1766469317643767871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8227890461273574364}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3994640cb1bde01408c1839493654eb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxValue: 100
 --- !u!1 &8332231835284793235
 GameObject:
   m_ObjectHideFlags: 0

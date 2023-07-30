@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48a2cdce71a221741aa686af7c69cd2e, type: 3}
-  m_Name: ProtonBullet
+  m_Script: {fileID: 11500000, guid: f931af9e30e73a64da76ad580ec48e06, type: 3}
+  m_Name: ObstacleExplosion
   m_EditorClassIdentifier: 
-  launchForce: 10
-  lifeTime: 3
-  impactDamage: 2
-  impactParticlePrefab: {fileID: 4637368428985716149, guid: ef4ab6053a241c340b217d92a9e10802,
-    type: 3}
+  variants: []
+  filters: []
