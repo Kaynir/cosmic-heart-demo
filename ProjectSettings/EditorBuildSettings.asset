@@ -6,6 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Game/Levels/Bootstrap.unity
+    guid: 0e54585610297f14b8f046e28d01adb8
+  - enabled: 1
+    path: Assets/_Game/Levels/MainMenu.unity
+    guid: aacbc82e4dce5a449b814088ff4f3ebd
+  - enabled: 1
     path: Assets/_Game/Levels/Galaxy.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/_Game/Levels/PlayerSpaceship.unity
+    guid: 472b6dbaded9bd141b8b6bf77811cc7f
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 72a3f46f39cacb84cbb435565f6a595d,
+      type: 2}
