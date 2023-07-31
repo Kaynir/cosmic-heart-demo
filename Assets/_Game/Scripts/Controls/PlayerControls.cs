@@ -9,7 +9,7 @@ namespace CosmicHeart.Controls
         public event Action<Vector3> MovePerformed;
         public event Action<Vector3> LookPerformed;
 
-        public event Action<int> ShotPerformed;
+        public event Action<int, bool> ShotPerformed;
 
         private PlayerInputActions inputActions;
 
@@ -35,12 +35,12 @@ namespace CosmicHeart.Controls
 
         private void OnShotPerformed_1(CallbackContext context)
         {
-            ShotPerformed?.Invoke(0);
+            ShotPerformed?.Invoke(0, context.ReadValueAsButton());
         }
 
         private void OnShotPerformed_2(CallbackContext context)
         {
-            ShotPerformed?.Invoke(1);
+            ShotPerformed?.Invoke(1, context.ReadValueAsButton());
         }
     }
 }

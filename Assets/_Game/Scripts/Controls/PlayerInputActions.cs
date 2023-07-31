@@ -53,7 +53,7 @@ namespace CosmicHeart.Controls
                     ""id"": ""744102df-2e9a-4830-8d47-6442237e8ab6"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(behavior=2)"",
                     ""initialStateCheck"": false
                 },
                 {
@@ -62,7 +62,7 @@ namespace CosmicHeart.Controls
                     ""id"": ""14233996-cf5f-4876-80fc-70ad572c73ce"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press(behavior=2)"",
                     ""initialStateCheck"": false
                 }
             ],
