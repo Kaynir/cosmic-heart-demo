@@ -19,6 +19,7 @@ namespace CosmicHeart.Controls
             inputActions.Character.Enable();
             inputActions.Character.Move.performed += OnMovePerformed;
             inputActions.Character.Look.performed += OnLookPerformed;
+            inputActions.Character.Look.canceled += OnLookCanceled;
             inputActions.Character.Weapon_1.performed += OnShotPerformed_1;
             inputActions.Character.Weapon_2.performed += OnShotPerformed_2;
         }
@@ -30,7 +31,13 @@ namespace CosmicHeart.Controls
 
         private void OnLookPerformed(CallbackContext context)
         {
+            Cursor.lockState = CursorLockMode.Locked;
             LookPerformed?.Invoke(context.ReadValue<Vector2>());
+        }
+
+        private void OnLookCanceled(CallbackContext context)
+        {
+            Cursor.lockState = CursorLockMode.None;
         }
 
         private void OnShotPerformed_1(CallbackContext context)

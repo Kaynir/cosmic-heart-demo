@@ -231,6 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 933e77199f576fb4bb5b4d3eb7fedbdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cursorLockMode: 0
   startScenes: 0200000001000000
 --- !u!1 &907011049
 GameObject:

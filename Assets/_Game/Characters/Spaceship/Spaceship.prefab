@@ -463,8 +463,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrustSpeed: 10
   thrustForceMode: 5
-  pitchSpeed: 3
-  yawSpeed: 2
+  pitchSpeed: 1.5
+  yawSpeed: 1
   rollSpeed: 5
   torqueForceMode: 5
 --- !u!114 &4780545690703076555

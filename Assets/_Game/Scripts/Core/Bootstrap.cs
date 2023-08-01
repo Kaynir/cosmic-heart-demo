@@ -8,13 +8,7 @@ namespace CosmicHeart.Core
 {
     public class Bootstrap : MonoBehaviour
     {
-        [SerializeField] private CursorLockMode cursorLockMode = CursorLockMode.Confined;
         [SerializeField] private List<MainScenes> startScenes = new List<MainScenes>();
-
-        private void Awake()
-        {
-            Cursor.lockState = cursorLockMode;
-        }
 
         private IEnumerator Start()
         {
