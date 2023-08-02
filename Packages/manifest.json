@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.kaynir.architecture-tools": "https://github.com/Kaynir/unity-architecture-tools.git",
     "com.kaynir.audio-extension": "https://github.com/Kaynir/unity-audio-extension.git",
     "com.unity.2d.psdimporter": "8.0.2",
     "com.unity.2d.sprite": "1.0.0",

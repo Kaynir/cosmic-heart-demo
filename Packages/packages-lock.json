@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.kaynir.architecture-tools": {
+      "version": "https://github.com/Kaynir/unity-architecture-tools.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "bad46bce458ea0bf577fbefe10a9373a6a4fc1c4"
+    },
     "com.kaynir.audio-extension": {
       "version": "https://github.com/Kaynir/unity-audio-extension.git",
       "depth": 0,
