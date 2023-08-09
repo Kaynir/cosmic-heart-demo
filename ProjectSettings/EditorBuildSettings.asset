@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/_Game/Levels/Bootstrap.unity
     guid: 0e54585610297f14b8f046e28d01adb8
   - enabled: 1
+    path: Assets/_Game/Levels/LoadingScene.unity
+    guid: e8399d951b84ecc4abc6f5727bd5f722
+  - enabled: 1
     path: Assets/_Game/Levels/MainMenu.unity
     guid: aacbc82e4dce5a449b814088ff4f3ebd
   - enabled: 1

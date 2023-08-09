@@ -2,8 +2,8 @@ namespace CosmicHeart.Core
 {
     public enum MainScenes
     {
-        MainMenu = 1,
-        Galaxy = 2,
-        PlayerSpaceship = 3
+        MainMenu = 2,
+        Galaxy = 3,
+        PlayerSpaceship = 4
     }
 }

@@ -1,40 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+using Kaynir.SceneExtension;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using Zenject;
 
 namespace CosmicHeart.Core
 {
     public class Bootstrap : MonoBehaviour
     {
-        [SerializeField] private List<MainScenes> startScenes = new List<MainScenes>();
+        [Inject] private SceneLoader sceneLoader;
 
-        private IEnumerator Start()
-        {
-            yield return LoadStartScenesRoutine();
-        }
-
-        // TODO: перенести загрузку сцен в SceneLoader
-        private IEnumerator LoadStartScenesRoutine()
-        {
-            var operations = startScenes.Select((scene, i) =>
-            {
-                var mode = i == 0 ? LoadSceneMode.Single : LoadSceneMode.Additive;
-                var op = SceneManager.LoadSceneAsync((int)scene, mode);
-                op.allowSceneActivation = false;
-                return op;
-            }).ToList();
-
-            while (operations.All(op => op.progress < .9f))
-            {
-                yield return null;
-            }
-
-            foreach (var op in operations)
-            {
-                op.allowSceneActivation = true;
-            }
+        private void Start()
+        {   
+            sceneLoader.LoadSingle((int)MainScenes.Galaxy,
+                                   (int)MainScenes.MainMenu);
         }
     }
 }

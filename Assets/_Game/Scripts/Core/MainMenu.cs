@@ -1,5 +1,5 @@
+using Kaynir.SceneExtension.Tools;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace CosmicHeart.Core
 {
@@ -10,12 +10,11 @@ namespace CosmicHeart.Core
             Cursor.visible = true;
         }
 
-        // TODO: перенести загрузку сцен в SceneLoader
         public void PlayGame()
         {
             Cursor.visible = false;
-            SceneManager.LoadSceneAsync((int)MainScenes.PlayerSpaceship, LoadSceneMode.Additive);
-            SceneManager.UnloadSceneAsync((int)MainScenes.MainMenu);
+            SceneHelper.LoadAdditive((int)MainScenes.PlayerSpaceship);
+            SceneHelper.Unload((int)MainScenes.MainMenu);
         }
     }
 }

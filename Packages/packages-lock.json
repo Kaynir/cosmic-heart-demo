@@ -14,6 +14,13 @@
       "dependencies": {},
       "hash": "31843809193617057a47e97dabd117084d574751"
     },
+    "com.kaynir.scene-extension": {
+      "version": "https://github.com/Kaynir/scene-extension.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "431926f56cff01ce973a0ee6a7f1f4bea5c90540"
+    },
     "com.unity.2d.animation": {
       "version": "9.0.3",
       "depth": 1,
