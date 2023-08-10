@@ -1,10 +1,11 @@
+using CosmicHeart.Characters;
 using CosmicHeart.Controls;
 using CosmicHeart.Interactions;
 using CosmicHeart.Movement.Moveables;
 using UnityEngine;
 using Zenject;
 
-namespace CosmicHeart.Characters
+namespace CosmicHeart.Core.Installers
 {
     public class PlayerSpaceshipInstaller : MonoInstaller
     {

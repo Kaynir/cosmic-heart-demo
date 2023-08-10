@@ -1,6 +1,7 @@
+using CosmicHeart.Tools.Particles;
 using Zenject;
 
-namespace CosmicHeart.Tools.Particles
+namespace CosmicHeart.Core.Installers
 {
     public class ParticleFactoryInstaller : MonoInstaller
     {

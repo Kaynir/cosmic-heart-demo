@@ -1,7 +1,8 @@
+using CosmicHeart.Weapons.Shooting;
 using UnityEngine;
 using Zenject;
 
-namespace CosmicHeart.Weapons.Shooting
+namespace CosmicHeart.Core.Installers
 {
     public class ProjectileInstaller : MonoInstaller
     {

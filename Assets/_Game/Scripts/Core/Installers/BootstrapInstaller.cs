@@ -1,15 +1,18 @@
 using Kaynir.SceneExtension;
+using UnityEngine;
 using Zenject;
 
-namespace CosmicHeart.Core
+namespace CosmicHeart.Core.Installers
 {
     public class BootstrapInstaller : MonoInstaller
     {
+        [SerializeField] private SceneLoader sceneLoader = null;
+
         public override void InstallBindings()
         {
             Container.Bind<SceneLoader>()
                      .ToSelf()
-                     .FromComponentInHierarchy()
+                     .FromInstance(sceneLoader)
                      .AsSingle();
         }
     }

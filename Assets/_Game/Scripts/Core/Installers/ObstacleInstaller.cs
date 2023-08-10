@@ -1,8 +1,9 @@
 using CosmicHeart.Interactions;
+using CosmicHeart.Obstacles;
 using UnityEngine;
 using Zenject;
 
-namespace CosmicHeart.Obstacles
+namespace CosmicHeart.Core.Installers
 {
     public class ObstacleInstaller : MonoInstaller
     {
