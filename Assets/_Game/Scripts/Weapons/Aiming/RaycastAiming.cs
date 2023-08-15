@@ -1,3 +1,4 @@
+using CosmicHeart.Interactions;
 using UnityEngine;
 
 namespace CosmicHeart.Weapons.Aiming

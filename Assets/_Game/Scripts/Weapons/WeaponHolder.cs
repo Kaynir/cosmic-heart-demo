@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using CosmicHeart.Controls;
 using UnityEngine;
@@ -7,50 +8,30 @@ namespace CosmicHeart.Weapons
 {
     public class WeaponHolder : MonoBehaviour
     {
-        [SerializeField] private List<Weapon> weapons = new List<Weapon>();
+        [SerializeField] private List<WeaponSlot> weaponSlots = new();
 
-        [Inject] private IWeaponControls controls;
+        private IActionControls controls;
 
-        private bool[] weaponStates;
-
-        private void Awake()
+        [Inject]
+        public void Construct(IActionControls actionControls)
         {
-            weaponStates = new bool[weapons.Count];
-        }
-
-        private void OnEnable()
-        {
-            controls.ShotPerformed += SetWeaponShootState;
-        }
-
-        private void OnDisable()
-        {
-            controls.ShotPerformed -= SetWeaponShootState;
+            controls = actionControls;
         }
 
         private void Update()
         {
-            for (int i = 0; i < weaponStates.Length; i++)
+            foreach (WeaponSlot slot in weaponSlots)
             {
-                if (!weaponStates[i]) continue;
-                
-                weapons[i].Shoot();
+                if (!controls.GetActionState(slot.actionType)) continue;
+                slot.weapon.Shoot();
             }
         }
 
-        private void SetWeaponShootState(int index, bool enabled)
+        [Serializable]
+        private struct WeaponSlot
         {
-            if (!IsWeaponAssigned(index)) return;
-            
-            weaponStates[index] = enabled;
-        }
-
-        private bool IsWeaponAssigned(int index)
-        {
-            if (index < weapons.Count) return true;
-
-            Debug.Log($"Weapon [{index}] not assigned.");
-            return false;
+            public Weapon weapon;
+            public InputActionType actionType;
         }
     }
 }

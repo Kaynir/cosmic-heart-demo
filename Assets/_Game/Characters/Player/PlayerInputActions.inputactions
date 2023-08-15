@@ -24,21 +24,30 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Weapon_1",
+                    "name": "MainWeapon",
                     "type": "Button",
                     "id": "744102df-2e9a-4830-8d47-6442237e8ab6",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(behavior=2)",
+                    "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Weapon_2",
+                    "name": "ExtraWeapon",
                     "type": "Button",
                     "id": "14233996-cf5f-4876-80fc-70ad572c73ce",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(behavior=2)",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Interaction",
+                    "type": "Button",
+                    "id": "77d8d142-a1ff-4d25-9be2-ff7f801aff6f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
                     "initialStateCheck": false
                 }
             ],
@@ -270,7 +279,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "MouseKeyboard",
-                    "action": "Weapon_1",
+                    "action": "MainWeapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -281,7 +290,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Weapon_1",
+                    "action": "MainWeapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -292,7 +301,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "MouseKeyboard",
-                    "action": "Weapon_2",
+                    "action": "ExtraWeapon",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -303,7 +312,29 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Weapon_2",
+                    "action": "ExtraWeapon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b795b116-0e9d-49b2-9eb4-37939c2ccd17",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MouseKeyboard",
+                    "action": "Interaction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "78878b22-51a2-4bf9-be35-904116eb6a15",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Interaction",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

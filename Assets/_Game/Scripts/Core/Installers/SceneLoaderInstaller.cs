@@ -4,7 +4,7 @@ using Zenject;
 
 namespace CosmicHeart.Core.Installers
 {
-    public class BootstrapInstaller : MonoInstaller
+    public class SceneLoaderInstaller : MonoInstaller
     {
         [SerializeField] private SceneLoader sceneLoader = null;
 

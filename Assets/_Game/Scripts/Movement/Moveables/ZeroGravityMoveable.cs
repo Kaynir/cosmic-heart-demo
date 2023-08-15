@@ -6,20 +6,12 @@ namespace CosmicHeart.Movement.Moveables
     public class ZeroGravityMoveable : MonoBehaviour, IMoveable
     {
         [Header("Thrust Settings:")]
-        [SerializeField, Min(0f)] private float thrustSpeed = 25f;
+        [SerializeField] private float thrustSpeed = 10f;
         [SerializeField] private ForceMode thrustForceMode = ForceMode.Acceleration;
 
         [Header("Torque Settings:")]
-        [SerializeField, Min(0f)] private float pitchSpeed = 5f;
-        [SerializeField, Min(0f)] private float yawSpeed = 5f;
-        [SerializeField, Min(0f)] private float rollSpeed = 5f;
+        [SerializeField] private Vector3 torqueSpeed = new(1.5f, 1f, 5f);
         [SerializeField] private ForceMode torqueForceMode = ForceMode.Acceleration;
-
-        public float MoveSpeed
-        {
-            get => thrustSpeed;
-            set => thrustSpeed = Mathf.Max(0f, value);
-        }
 
         private Rigidbody body;
 
@@ -30,8 +22,9 @@ namespace CosmicHeart.Movement.Moveables
         {
             body = GetComponent<Rigidbody>();
             body.useGravity = false;
-            ResetVelocity();
         }
+
+        private void OnEnable() => ResetVelocity();
 
         private void FixedUpdate()
         {
@@ -39,21 +32,19 @@ namespace CosmicHeart.Movement.Moveables
             body.AddRelativeTorque(torque, torqueForceMode);
         }
 
-        private void OnDisable() => ResetVelocity();
-
         public void SetLookDirection(Vector3 lookDirection)
         {
-            torque.x = lookDirection.y * yawSpeed;
-            torque.y = lookDirection.x * pitchSpeed;
+            torque.x = lookDirection.y * torqueSpeed.y;
+            torque.y = lookDirection.x * torqueSpeed.x;
         }
 
         public void SetMoveDirection(Vector3 moveDirection)
         {
             thrust = Vector3.forward * moveDirection.y * thrustSpeed;
-            torque.z = moveDirection.x * rollSpeed;
+            torque.z = moveDirection.x * torqueSpeed.z;
         }
 
-        private void ResetVelocity()
+        public void ResetVelocity()
         {
             thrust = Vector3.zero;
             torque = Vector3.zero;

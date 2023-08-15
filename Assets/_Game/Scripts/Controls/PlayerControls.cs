@@ -1,53 +1,66 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.InputSystem.InputAction;
 
 namespace CosmicHeart.Controls
 {
-    public class PlayerControls : IMoveControls, IWeaponControls
+    public class PlayerControls : MonoBehaviour, IMoveControls, IActionControls
     {
-        public event Action<Vector3> MovePerformed;
-        public event Action<Vector3> LookPerformed;
+        public event Action<InputActionType> ActionPerformed;
+        public event Action<InputActionType> ActionCanceled;
 
-        public event Action<int, bool> ShotPerformed;
+        public Vector3 MoveInput { get; private set; }
+        public Vector3 LookInput { get; private set; }
 
-        private PlayerInputActions inputActions;
+        private Dictionary<InputActionType, bool> actions;
 
-        public PlayerControls(PlayerInputActions actions)
+        private void Awake()
         {
-            inputActions = actions;
-            inputActions.Character.Enable();
-            inputActions.Character.Move.performed += OnMovePerformed;
-            inputActions.Character.Look.performed += OnLookPerformed;
-            inputActions.Character.Look.canceled += OnLookCanceled;
-            inputActions.Character.Weapon_1.performed += OnShotPerformed_1;
-            inputActions.Character.Weapon_2.performed += OnShotPerformed_2;
+            MoveInput = Vector3.zero;
+            LookInput = Vector3.zero;
+
+            actions = new Dictionary<InputActionType, bool>();
         }
 
-        private void OnMovePerformed(CallbackContext context)
+        public bool GetActionState(InputActionType type)
         {
-            MovePerformed?.Invoke(context.ReadValue<Vector2>());
+            return actions.TryGetValue(type, out bool performed) && performed;
         }
 
-        private void OnLookPerformed(CallbackContext context)
+        private void SetAction(InputActionType type, CallbackContext context)
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            LookPerformed?.Invoke(context.ReadValue<Vector2>());
+            actions[type] = context.performed;
+            
+            if (context.performed) ActionPerformed?.Invoke(type);
+            if (context.canceled) ActionCanceled?.Invoke(type);
         }
 
-        private void OnLookCanceled(CallbackContext context)
+        #region Input System Callbacks
+        public void OnMovePerformed(CallbackContext context)
         {
-            Cursor.lockState = CursorLockMode.None;
+            MoveInput = context.ReadValue<Vector2>();
         }
 
-        private void OnShotPerformed_1(CallbackContext context)
+        public void OnLookPerformed(CallbackContext context)
         {
-            ShotPerformed?.Invoke(0, context.ReadValueAsButton());
+            LookInput = context.ReadValue<Vector2>();
         }
 
-        private void OnShotPerformed_2(CallbackContext context)
+        public void OnMainWeaponShotPerformed(CallbackContext context)
         {
-            ShotPerformed?.Invoke(1, context.ReadValueAsButton());
+            SetAction(InputActionType.MainWeapon, context);
         }
+
+        public void OnExtraWeaponShotPerformed(CallbackContext context)
+        {
+            SetAction(InputActionType.ExtraWeapon, context);
+        }
+
+        public void OnInteractionPerformed(CallbackContext context)
+        {
+            SetAction(InputActionType.Interaction, context);
+        }
+        #endregion
     }
 }

@@ -69,6 +69,101 @@ Transform:
   m_Father: {fileID: 8864228057831079821}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4154639606810658909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2284897830674398648}
+  - component: {fileID: 7488419985838084049}
+  - component: {fileID: 2224674243656412155}
+  - component: {fileID: 9125135987453986638}
+  m_Layer: 10
+  m_Name: Entrance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2284897830674398648
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4154639606810658909}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4823613343339057196}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &7488419985838084049
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4154639606810658909}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2224674243656412155
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4154639606810658909}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.65, y: 0.25, z: 1}
+  m_Center: {x: 0, y: 0.15, z: 0}
+--- !u!114 &9125135987453986638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4154639606810658909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d241d7f14ddfec847a29a344a5ac2455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vehicle: {fileID: 8718539181215046016}
 --- !u!1 &6255772555767183752
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,10 +487,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4823613343339057196}
   - component: {fileID: 1825763462437748128}
+  - component: {fileID: 8718539181215046016}
   - component: {fileID: 7754643751572177628}
+  - component: {fileID: 2890093425646100755}
   - component: {fileID: 4780545690703076555}
   m_Layer: 6
-  m_Name: Spaceship
+  m_Name: PlayerSpaceship
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -414,13 +511,14 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5448139528798774798}
+  - {fileID: 2284897830674398648}
   - {fileID: 263787756997039851}
   - {fileID: 8745589682278743263}
   - {fileID: 3111831699675113950}
   - {fileID: 8864228057831079821}
   - {fileID: 642973443142591179}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1825763462437748128
 Rigidbody:
@@ -430,7 +528,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8227890461273574364}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 3
   m_AngularDrag: 1.5
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -449,6 +547,20 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8718539181215046016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8227890461273574364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee9e565df44ff4342b4ba73bbea5589e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motor: {fileID: 2890093425646100755}
+  weaponHolder: {fileID: 4780545690703076555}
 --- !u!114 &7754643751572177628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,10 +575,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrustSpeed: 10
   thrustForceMode: 5
-  pitchSpeed: 1.5
-  yawSpeed: 1
-  rollSpeed: 5
+  torqueSpeed: {x: 1.5, y: 1, z: 5}
   torqueForceMode: 5
+--- !u!114 &2890093425646100755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8227890461273574364}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbadb85fea6e8d644a505b3b8a6d4084, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4780545690703076555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,13 +596,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8227890461273574364}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6d19513f11bb3684385d9669d5c93e6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapons:
-  - {fileID: 8009816441907762555}
+  weaponSlots:
+  - weapon: {fileID: 8009816441907762555}
+    actionType: 0
 --- !u!1 &8332231835284793235
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +617,7 @@ GameObject:
   - component: {fileID: 8331725099711881704}
   - component: {fileID: 8975105935180627753}
   m_Layer: 6
-  m_Name: Colliders
+  m_Name: Hitboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -693,6 +816,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_ParticleTrails_Blue_ML
       objectReference: {fileID: 0}
+    - target: {fileID: 6064342655133778855, guid: 0c9fb9a7f2a5ae342b6ddba602720674,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8651431671627673463, guid: 0c9fb9a7f2a5ae342b6ddba602720674,
         type: 3}
       propertyPath: m_RootOrder
@@ -786,6 +914,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FX_ParticleTrails_Blue_MR
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064342655133778855, guid: 0c9fb9a7f2a5ae342b6ddba602720674,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8651431671627673463, guid: 0c9fb9a7f2a5ae342b6ddba602720674,
         type: 3}
@@ -919,7 +1052,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f29ec3fa61c2a8242915a2e4ee212639,
         type: 3}
       propertyPath: m_Name
-      value: SM_Spaceship
+      value: Model
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f29ec3fa61c2a8242915a2e4ee212639,
         type: 3}
@@ -964,6 +1097,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FX_ParticleTrails_Blue_LL
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064342655133778855, guid: 0c9fb9a7f2a5ae342b6ddba602720674,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8651431671627673463, guid: 0c9fb9a7f2a5ae342b6ddba602720674,
         type: 3}
@@ -1059,6 +1197,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_ParticleTrails_Blue_M
       objectReference: {fileID: 0}
+    - target: {fileID: 6064342655133778855, guid: 0c9fb9a7f2a5ae342b6ddba602720674,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8651431671627673463, guid: 0c9fb9a7f2a5ae342b6ddba602720674,
         type: 3}
       propertyPath: m_RootOrder
@@ -1133,6 +1276,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3111831699675113950}
     m_Modifications:
+    - target: {fileID: 1727507061892294, guid: 442779a7b06f6254eac9b0f18e93de14, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142624816116318474, guid: 442779a7b06f6254eac9b0f18e93de14,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 6214237218144737166, guid: 442779a7b06f6254eac9b0f18e93de14,
         type: 3}
       propertyPath: originPoint
@@ -1183,6 +1335,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProtonCannon
       objectReference: {fileID: 0}
+    - target: {fileID: 9026112942057019400, guid: 442779a7b06f6254eac9b0f18e93de14,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1218,6 +1375,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FX_ParticleTrails_Blue_RR
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064342655133778855, guid: 0c9fb9a7f2a5ae342b6ddba602720674,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8651431671627673463, guid: 0c9fb9a7f2a5ae342b6ddba602720674,
         type: 3}
@@ -1313,6 +1475,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_ParticleTrails_Blue_L
       objectReference: {fileID: 0}
+    - target: {fileID: 6064342655133778855, guid: 0c9fb9a7f2a5ae342b6ddba602720674,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8651431671627673463, guid: 0c9fb9a7f2a5ae342b6ddba602720674,
         type: 3}
       propertyPath: m_RootOrder
@@ -1406,6 +1573,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FX_ParticleTrails_Blue_R
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064342655133778855, guid: 0c9fb9a7f2a5ae342b6ddba602720674,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8651431671627673463, guid: 0c9fb9a7f2a5ae342b6ddba602720674,
         type: 3}

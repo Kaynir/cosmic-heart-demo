@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/_Game/Levels/Galaxy.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/_Game/Levels/PlayerSpaceship.unity
+    path: Assets/_Game/Levels/Player_Galaxy.unity
     guid: 472b6dbaded9bd141b8b6bf77811cc7f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 911505b1a1f37df4f99d414ede03bc0a,
